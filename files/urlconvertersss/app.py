@@ -1,41 +1,20 @@
 from flask import Flask
 from uuid import UUID
+
 app = Flask(__name__)
 
 @app.route("/")
 def home():
     return "hello guyz what's up"
 
-# @app.route("/about")
-# def about():
-#     return "welcome to about page"
-
-# @app.route("/contact")
-# def contact():
-#     return "welcome to the contact list "
-
-# @app.route("/features")
-# def features():
-#     return "these are some different features of this page" 
-
-
-@app.route("/users")
-def users():
-    return "welcome to user page"     #this is a static data 
-
-# @app.route("/user/<name>")
-# def user(name):
-#     return f"USER ID: {name}"       #this is a dynamic data
-
-
 @app.route("/numbs/<int:id>")     #this is an integer url converter
 def numbs(id):
     return f"USER ID: {id}"        
 
 
-# @app.route("/price/<float:amount>")    #this is a float url converter
-# def price(amount):
-#     return f"Price: {amount}" 
+@app.route("/price/<float:amount>")    #this is a float url converter
+def price(amount):
+    return f"Price: {amount}" 
 
 @app.route("/user/<string:name>")    #this is a string url converter
 def user(name):                       #in this u can get numbers float too
