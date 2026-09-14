@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,request
 # from uuid import UUID
 app = Flask(__name__)
 
@@ -7,5 +7,14 @@ def home():
     return "hello guyz what's up"
 
 
+@app.route("/search")
+def search():
+    name = request.args.get("name")
+    return f"Hello {name}"
+
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+
